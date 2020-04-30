@@ -1,6 +1,7 @@
-// fetch
-fetch ('https://app.ticketmaster.com/discovery/v2/events.json?dmaId=343&apikey=WoH918XzQjQACHV4jJJlI2oUqLqtJXUz')
-.then(response => response.json())
-.then(genreChoice => {
-
+concertResults = (name, date, time) => {
+    return `
+    <div class="row">
+  <h>${name},</h1><h5>${date},</h5><h6>${time},</h6>
+</div>
+    `
 }
