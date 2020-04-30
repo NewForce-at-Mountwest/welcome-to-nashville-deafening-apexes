@@ -1,4 +1,4 @@
-const token = "DCTFR5TUEX7ZMZCXUWAM";
+const token = "";
 
 let searchField = "";
 
