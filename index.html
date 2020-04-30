@@ -1,11 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport content=width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <section class="search-bar">
+      <input
+        type="text"
+        class="input-bar"
+        id="park-search"
+        placeholder="Parks by name"
+      /><button class="button" id="park-button">Search Parks</button>
+    </section>
+    <section class="search-bar">
+      <input
+        type="text"
+        class="input-bar"
+        id="brewery-search"
+        placeholder="Breweries by name"
+      /><button class="button" id="brewery-button">Search Breweries</button>
+    </section>
+    <section class="search-bar">
+      <input
+        type="text"
+        class="input-bar"
+        id="meetup-search"
+        placeholder="Meetups by name"
+      /><button class="button" id="meetup-button">Search Meetups</button>
+    </section>
+    <section class="search-bar">
+      <input
+        type="text"
+        class="input-bar"
+        id="concert-search"
+        placeholder="Concerts by name"
+      /><button class="button" id="concert-button">Search Concerts</button>
+    </section>
+    <section id="search-results">
+      <h1>Results:</h1>
+    </section>
+    <script src="meetupFetch.js"></script>
+  </body>
 </html>
