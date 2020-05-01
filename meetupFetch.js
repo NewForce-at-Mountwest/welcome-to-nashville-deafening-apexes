@@ -1,5 +1,3 @@
-const token = "4f18e409c1c0c9fc65693533b6c36724";
-
 let searchField = "";
 
 //Adds an event listener to the Search Restaurants button
@@ -14,7 +12,7 @@ document
       `https://developers.zomato.com/api/v2.1/search?entity_id=1138&entity_type=city&q=${searchField}`,
       {
         headers: {
-          "user-key": token,
+          "user-key": zomatoToken,
         },
       }
     )
@@ -29,12 +27,14 @@ document
 const renderRestaurantEntries = (entriesArray) => {
   for (let i = 0; i < 10; i++) {
     //Adds the restaurant name and address to an array of Strings. If the user clicks "Save", the id of the save button will be grabbed. This ID is also the entry's index in this String array. The entry will be copied from the string array and into the itinerary array.
-    stringArray[
-      i
-    ] = `<b>${entriesArray.restaurants[i].restaurant.name}</b>: ${entriesArray.restaurants[i].restaurant.location.address}`;
-    //Prints to the DOM- a number for a list, and the name and address that we just saved
-    document.querySelector("#search-results").innerHTML += `${i + 1}. ${
-      stringArray[i]
-    } <button id="save-${i}">Save</button><br>`;
+    if (entriesArray.restaurants[i] != undefined) {
+      stringArray[
+        i
+      ] = `<b>${entriesArray.restaurants[i].restaurant.name}</b>: ${entriesArray.restaurants[i].restaurant.location.address}`;
+      //Prints to the DOM- a number for a list, and the name and address that we just saved
+      document.querySelector("#search-results").innerHTML += `${i + 1}. ${
+        stringArray[i]
+      } <button class="save-button" id="save-${i}">Save</button><br>`;
+    }
   }
 };
