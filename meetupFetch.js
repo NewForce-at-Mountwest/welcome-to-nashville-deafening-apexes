@@ -34,16 +34,7 @@ const renderRestaurantEntries = (entriesArray) => {
       //Prints to the DOM- a number for a list, and the name and address that we just saved
       document.querySelector("#search-results").innerHTML += `${i + 1}. ${
         stringArray[i]
-      } <button class="save-button" id="save-${i}">Save</button><br>`;
+      } <button class="save-button" id="save-restaurant-${i}">Save</button><br>`;
     }
   }
-<<<<<<< HEAD
 };
-=======
-})
-.then(r => r.json())
-.then(responseArray => {
-    console.log(responseArray)
-
-  })
->>>>>>> master

@@ -3,6 +3,9 @@ let stringArray = [];
 //another array of Strings, filled with entries the user has clicked Save on
 let itineraryArray = [];
 
+let itineraryObject = {
+};
+
 //Clears the search fields and the search results
 const clearEntries = () => {
   document.querySelector("#brewery-search").value = "";
@@ -20,21 +23,39 @@ document
     let splitArray = event.target.id.split("-");
     //If the clicked button is a save button...
     if ((splitArray[0] = "save")) {
-      //...then we will grab the second half of its ID, which is actually the index that its corresponding search result is in stringArray. We'll grab it from that array, then push it to our itineraryArray
-      if (stringArray[splitArray[1]] != undefined) {
-        itineraryArray.push(stringArray[splitArray[1]]);
+      //...then we will grab the second half of its ID, which is actually the index that its corresponding search result is in stringArray. We'll grab it from that array, then push it to our itineraryObject
+      if (stringArray[splitArray[2]] != undefined) {
+        itineraryArray.push(stringArray[splitArray[2]]);
+        itineraryObject[`${splitArray[1]}`] = stringArray[splitArray[2]];
       }
-      //Calls a function to print the new itineraryArray
+      //Calls a function to print the new itineraryObject
       printItinerary();
     }
   });
 
-//A function for printing the strings in the itineraryArray
+//A function for printing the strings in the itineraryObject
 const printItinerary = () => {
   //Clears the itinerary field and adds a heading
   document.querySelector("#itinerary").innerHTML = "<h1>Itinerary:</h1>";
-  //Prints each item in the itineraryArray beneath the heading
-  itineraryArray.forEach((item) => {
-    document.querySelector("#itinerary").innerHTML += `${item}<br>`;
-  });
+  // //Prints each property of the itineraryObject beneath the heading, as long as they exist
+  if (itineraryObject.park != undefined) {
+    document.querySelector("#itinerary").innerHTML += `
+    <b>Park: </b>${itineraryObject.park}
+    `;
+  }
+  if (itineraryObject.brewery != undefined) {
+    document.querySelector("#itinerary").innerHTML += `
+    <b>Brewery: </b>${itineraryObject.brewery}
+    `;
+  }
+  if (itineraryObject.restaurant != undefined) {
+    document.querySelector("#itinerary").innerHTML += `
+    <b>Restaurant: </b>${itineraryObject.restaurant}
+    `;
+  }
+  if (itineraryObject.concert != undefined) {
+    document.querySelector("#itinerary").innerHTML += `
+    <b>Concert: </b>${itineraryObject.concert}
+    `;
+  }
 };
