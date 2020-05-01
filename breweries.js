@@ -16,7 +16,7 @@ function fetchBreweries() {
             // Since if statements are on the inside the code is looping even if conditionals are not met. Do ifs then foreach in ifs
             parsedBreweries.forEach(element => {
                 if (breweryUserInput != "") {
-                    if (element.state === "Tennessee" && element.name.toLowerCase().includes(breweryUserInput.toLowerCase())) { //Checking for state of TN and user search value && lower casing everything for the compare
+                   if (element.state === "Tennessee" && element.name.toLowerCase().includes(breweryUserInput.toLowerCase())) { //Checking for state of TN and user search value && lower casing everything for the compare
                         document.querySelector(`#search-results`).innerHTML += `<h3>${element.name}</h3><p>${element.street}</p> <p>Phone: ${element.phone}</p><p><a href="${element.website_url}" target="_blank">${element.website_url}</a></p>`
                     }
                 } else if (element.state === "Tennessee" && element.name != "Brewery In Planning - Nashville") {    //Filtering TN and removing in planning results as they are not yet available
