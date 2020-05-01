@@ -37,4 +37,13 @@ const renderRestaurantEntries = (entriesArray) => {
       } <button class="save-button" id="save-${i}">Save</button><br>`;
     }
   }
+<<<<<<< HEAD
 };
+=======
+})
+.then(r => r.json())
+.then(responseArray => {
+    console.log(responseArray)
+
+  })
+>>>>>>> master
