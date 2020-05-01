@@ -7,9 +7,11 @@ document.querySelector("#park-button").addEventListener("click", function () {
     fetch(`https://data.nashville.gov/resource/xbru-cfzi.json?`)
     .then(r => r.json())
     .then (parks => {
+        // Clear past results button
+        clearEntries()
+        // Parks loop
         parks.forEach(element => {
         if (element.park_name.includes(parkSearchValue) === true) {
-            // parkSearchValue = element.park_name
             document.querySelector("#search-results").innerHTML += parkPrinter(element.park_name, element.mapped_location_address)
         } 
         // else if (element.park_name.includes(parkSearchValue) !== true){
@@ -19,21 +21,3 @@ document.querySelector("#park-button").addEventListener("click", function () {
             
         });
     })
-    // });
-
-        // Fetch parks api backup
-        // fetch(`https://data.nashville.gov/resource/xbru-cfzi.json?${parkSearchValue}=Yes`)
-        // .then(r => r.json())
-        // .then (parks => {
-        //     parks.forEach(element => {
-        //     if (parkSearchValue.toLowerCase().includes(element.park_name)) {
-                
-        //         // parkSearchValue = element.park_name
-    
-        //         document.querySelector("#search-results").innerHTML += parkPrinter(element.park_name, element.mapped_location_address)
-    
-        //     }
-                
-        //     });
-        // })
-        // });
