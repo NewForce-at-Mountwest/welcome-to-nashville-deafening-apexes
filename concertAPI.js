@@ -15,12 +15,20 @@ let artist = document
         if (artistChoice._embedded) {
           document.querySelector("#search-results").innerHTML =
           "<h1>Results:</h1>";
+          let i = 0;
         artistChoice._embedded.events.forEach((artist) => {
           document.querySelector("#search-results").innerHTML += concertResults(
             artist.name,
             artist.dates.start.localDate,
             artist.dates.start.localTime
-          )
+          );
+          stringArray[i] = concertResults(
+            artist.name,
+            artist.dates.start.localDate,
+            artist.dates.start.localTime
+          );
+          document.querySelector("#search-results").innerHTML += `<button class="save-button" id="save-concert-${i}">Save</button><br>`,
+          i++;
         } )
        
           
