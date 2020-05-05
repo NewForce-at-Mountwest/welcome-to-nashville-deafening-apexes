@@ -15,12 +15,9 @@ document.querySelector("#park-button").addEventListener("click", function () {
         // Filter for user input to match park name
         (parkSearchValue.toLowerCase()) === true) {
             document.querySelector("#search-results").innerHTML += parkPrinter(element.park_name, element.mapped_location_address)
-        }
-
-    })
-            
-        });
-    })
+        }})
+    });
+})
 
 
     // 
