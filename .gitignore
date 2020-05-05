@@ -1,1 +1,22 @@
 apiKeys.js
+
+
+# I am doing it right now
+
+
+
+
+
+# 9:51
+# Create two new files: one of them called .gitignore and one of them called apiKeys.js. You can call the JS file whatever you want, but the .gitignore file can only be called .gitignore (and the . before the name is important)
+# 9:51
+# 2. In apiKeys.js or whatever you called it, declare variables for your API keys. (For example, const zomatoKey = 134324io3u4oieruoiruklfjdfjoi3u434u523532525235
+# 9:52
+# 3. In your .gitignore file, add a line that just says the name of your new super secret JS file. For example, if you named your file apiKeys.js, you could just type apiKeys.js
+# 9:52
+# 4. Do a git add and then a git status. You should not see your apiKey.js show up green. If it does show up green, you've done something wrong and you should call one of us in.
+# 9:53
+# 5. Link apiKeys.js in your index.html file with your other script tags
+# 9:54
+# 6. You can reference apiKeys.js in any other script file. For example:
+# fetch(`http://zomato.com/apiKey=${zomatoKey}?name=tacoTuesday`).then(r => r.json()).then(r => console.log(r))

@@ -1,9 +1,11 @@
-// Function to create the Parks HTML string
-function parkPrinter (parkName, parkAddress){
-    return `
-    <p>${parkName}: ${parkAddress}</p>`
-}
 
+concertResults = (name, date, time) => {
+    return `
+    <div class="row">
+  <p><b>${name}</b>, <i>${date}</i>, ${time}</p>
+</div>
+    `
+}
 //an array of Strings, which is filled with search results gathered from the APIs
 let stringArray = [];
 //another array of Strings, filled with entries the user has clicked Save on
@@ -65,3 +67,10 @@ const printItinerary = () => {
     `;
   }
 };
+
+// Function to create the Parks HTML string
+function parkPrinter (parkName, parkAddress){
+    return `
+    <p>${parkName}: ${parkAddress}</p>`
+}
+
