@@ -1,3 +1,4 @@
+
 concertResults = (name, date, time) => {
     return `
     <div class="row">
@@ -67,3 +68,10 @@ const printItinerary = () => {
     `;
   }
 };
+
+// Function to create the Parks HTML string
+function parkPrinter (parkName, parkAddress){
+    return `
+    <p>${parkName}: ${parkAddress}</p>`
+}
+
