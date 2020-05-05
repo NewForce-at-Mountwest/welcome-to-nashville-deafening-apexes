@@ -44,6 +44,7 @@ document
 const printItinerary = () => {
   //Clears the itinerary field and adds a heading
   document.querySelector("#itinerary").innerHTML = "<h1>Itinerary:</h1>";
+
   // //Prints each property of the itineraryObject beneath the heading, as long as they exist
   if (itineraryObject.park != undefined) {
     document.querySelector("#itinerary").innerHTML += `
